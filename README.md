@@ -8,8 +8,50 @@ A single-page landing site for **Goke Motor Services**, a car buying service tha
 goke-motor-services/
 ├── index.html       ← Main landing page (all CSS/JS inline)
 ├── success.html     ← Thank-you page after form submission
+├── privacy.html     ← Privacy policy
+├── terms.html       ← Terms of service
+├── 404.html         ← Custom 404 error page
 └── README.md        ← You're reading it
 ```
+
+## What's Built
+
+### Core Sections (index.html)
+- **Hero** — headline, subtext, dual CTA buttons
+- **Value Propositions** — Wholesale Pricing, Licensed Dealer, Wide Selection
+- **Stats Bar** — animated counters (150+ cars, 120+ customers, $3,400 avg savings)
+- **How It Works** — 4-step card grid
+- **Pricing** — 3 tiers ($500 / $750 / $1,000) with "Most Popular" badge
+- **Comparison Table** — Dealership vs. Goke Motor Services (8 rows)
+- **Process Timeline** — 8-step vertical timeline from form to front door
+- **Guarantees** — refund, inspection, auction warranty, no hidden fees
+- **Testimonials** — 3 customer reviews with star ratings and avatar initials
+- **About / Founder** — photo placeholder + personal story from Goke
+- **Gallery** — 6 polished cards (4 image + 2 video) with "Coming Soon" overlays, ready for real media
+- **Lead Capture Form** — Netlify Forms with honeypot spam protection
+- **CTA Banner** — "Ready to Save Thousands?" with gradient background
+- **Payment Section** — Zelle (copy-to-clipboard) + PayPal (direct link)
+- **FAQ** — 6-question accordion (legal, timeline, refund, financing, viewing, service area)
+
+### Mobile Features
+- Hamburger nav menu (auto-closes on link click)
+- Floating bottom CTA bar ("Get Started — Find Your Car")
+- SMS/text floating button (bottom right)
+- Back-to-top button (appears after scrolling past hero)
+- Phone number in nav and mobile menu
+
+### SEO & Technical
+- Open Graph + Twitter Card meta tags
+- LocalBusiness JSON-LD structured data
+- Favicon (blue rounded square with "G")
+- Google Analytics placeholder (commented out, ready to activate)
+- Responsive design — fully mobile-optimized
+
+### Additional Pages
+- **success.html** — thank-you page after form submission with next steps
+- **privacy.html** — privacy policy (data collection, no selling data, Netlify hosting)
+- **terms.html** — terms of service (service fees, refund policy, warranty, liability)
+- **404.html** — custom error page matching site theme
 
 ## Deployment on Netlify (Free)
 
@@ -60,15 +102,19 @@ The lead capture form uses **Netlify Forms** — it works automatically when dep
 3. Update your domain's DNS to point to Netlify (they walk you through it)
 4. Free SSL is auto-provisioned
 
-## Future Enhancements
-- [ ] Add real car photos/videos to the gallery section
-- [ ] Add PayPal payment button/link for service fee collection
-- [ ] Add Zelle QR code or payment info
-- [ ] Add Google Analytics tracking
+## Remaining To-Dos
+- [ ] Add real car photos/videos to the gallery section (swap in `<img>` tags — instructions in HTML comments)
+- [ ] Update PayPal.me link with actual PayPal URL
+- [ ] Update social media links with real Instagram/Facebook/TikTok handles
+- [ ] Add Google Analytics tracking (uncomment and add Measurement ID)
 - [ ] Add Facebook Pixel for ad retargeting
-- [ ] Add customer testimonials
+- [ ] Purchase and connect custom domain (e.g., gokemotorservices.com)
+- [ ] Set up Netlify email notifications for form submissions
 - [ ] Connect form to a CRM (HubSpot, Mailchimp, etc.) via Netlify integrations
+- [ ] Replace founder photo placeholder with real photo
+- [ ] Replace placeholder testimonials with real customer reviews
 
 ## Contact
 - **Phone**: (469) 431-1473
 - **Business**: Goke Motor Services
+- **Location**: Dallas–Fort Worth area (serves nationwide)
