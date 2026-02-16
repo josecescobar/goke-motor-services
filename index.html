@@ -785,6 +785,189 @@
       border-color: rgba(59,130,246,0.25);
     }
 
+    /* ── SAVINGS CALCULATOR ── */
+    .calculator { background: var(--blue-deep); }
+    .calculator-inner {
+      max-width: 700px; margin: 50px auto 0;
+      background: var(--blue-card);
+      border: 1px solid rgba(59,130,246,0.1);
+      border-radius: 20px; padding: 48px 40px;
+    }
+    .calc-input-group { margin-bottom: 36px; }
+    .calc-input-group label {
+      display: block; font-size: 0.95rem; font-weight: 600;
+      margin-bottom: 10px; color: var(--gray-light);
+    }
+    .calc-input-group select {
+      width: 100%; padding: 14px 16px;
+      background: var(--blue-dark);
+      border: 1px solid rgba(59,130,246,0.12);
+      border-radius: 10px; color: var(--white);
+      font-family: inherit; font-size: 1rem;
+      transition: border-color .25s; cursor: pointer;
+    }
+    .calc-input-group select:focus {
+      outline: none; border-color: var(--blue-accent);
+      box-shadow: 0 0 0 3px rgba(59,130,246,0.1);
+    }
+    .calc-input-group select option { background: var(--blue-dark); }
+    .calc-results { display: none; }
+    .calc-results.active { display: block; animation: fadeDown 0.5s ease-out; }
+    .calc-bar-group { margin-bottom: 20px; }
+    .calc-bar-label {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 8px; font-size: 0.9rem;
+    }
+    .calc-bar-label .label-text { color: var(--gray-light); }
+    .calc-bar-label .label-price { font-weight: 700; font-size: 1.05rem; }
+    .calc-bar-label .label-price.dealer-price { color: var(--gray); text-decoration: line-through; }
+    .calc-bar-label .label-price.goke-price { color: var(--green); }
+    .calc-bar {
+      height: 14px; border-radius: 7px;
+      background: rgba(255,255,255,0.04); overflow: hidden;
+    }
+    .calc-bar-fill {
+      height: 100%; border-radius: 7px;
+      transition: width 0.8s cubic-bezier(0.25,0.46,0.45,0.94); width: 0;
+    }
+    .calc-bar-fill.bar-dealer { background: var(--gray); }
+    .calc-bar-fill.bar-goke { background: var(--blue-accent); }
+    .calc-savings-box {
+      text-align: center; margin-top: 32px; padding: 28px;
+      border-radius: 16px;
+      background: rgba(52,211,153,0.06);
+      border: 1px solid rgba(52,211,153,0.15);
+    }
+    .calc-savings-label {
+      color: var(--gray-light); font-size: 0.9rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 2px; margin-bottom: 8px;
+    }
+    .calc-savings-amount {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(2.5rem,6vw,4rem);
+      color: var(--green); line-height: 1;
+    }
+    .calc-savings-note { color: var(--gray); font-size: 0.85rem; margin-top: 8px; }
+    .calc-fee-badge {
+      display: inline-block; margin-top: 12px;
+      background: rgba(59,130,246,0.1);
+      border: 1px solid rgba(59,130,246,0.2);
+      color: var(--blue-accent);
+      padding: 6px 16px; border-radius: 50px;
+      font-size: 0.8rem; font-weight: 600;
+    }
+    .calc-cta { text-align: center; margin-top: 32px; }
+
+    /* ── DEAL EXAMPLES ── */
+    .deal-examples { background: var(--blue-dark); }
+    .deals-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 24px; margin-top: 50px;
+    }
+    .deal-card {
+      background: var(--blue-card);
+      border: 1px solid rgba(59,130,246,0.08);
+      border-radius: 16px; padding: 36px 28px; text-align: center;
+      transition: transform .3s, border-color .3s;
+    }
+    .deal-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(59,130,246,0.25);
+    }
+    .deal-car-icon { font-size: 2.8rem; margin-bottom: 16px; }
+    .deal-car-name {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.6rem; letter-spacing: 1px;
+      margin-bottom: 24px; color: var(--white);
+    }
+    .deal-price-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .deal-price-row:last-of-type { border-bottom: none; }
+    .deal-price-label { font-size: 0.88rem; color: var(--gray-light); }
+    .deal-price-value { font-weight: 700; font-size: 1.1rem; }
+    .deal-price-value.dealer {
+      color: #9BADC7; text-decoration: line-through;
+      text-decoration-color: #EF4444;
+    }
+    .deal-price-value.goke { color: var(--green); }
+    .deal-savings-badge {
+      display: inline-block; margin-top: 20px;
+      background: rgba(52,211,153,0.1);
+      border: 1px solid rgba(52,211,153,0.2);
+      color: var(--green);
+      padding: 10px 24px; border-radius: 50px;
+      font-size: 1.1rem; font-weight: 700;
+    }
+    .deal-fee-badge {
+      display: inline-block; margin-top: 12px;
+      background: rgba(59,130,246,0.08);
+      border: 1px solid rgba(59,130,246,0.15);
+      color: var(--blue-accent);
+      padding: 6px 14px; border-radius: 50px;
+      font-size: 0.78rem; font-weight: 600;
+    }
+
+    /* ── EXIT INTENT POPUP ── */
+    .exit-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center; justify-content: center;
+    }
+    .exit-overlay.active { display: flex; animation: exitFadeIn 0.3s ease-out; }
+    @keyframes exitFadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes exitSlideUp {
+      from { opacity: 0; transform: translateY(30px) scale(0.95); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .exit-modal {
+      background: var(--blue-card);
+      border: 1px solid rgba(59,130,246,0.2);
+      border-radius: 20px; padding: 48px 40px;
+      max-width: 480px; width: 90%; text-align: center;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.4);
+      animation: exitSlideUp 0.4s ease-out 0.1s both;
+    }
+    .exit-close {
+      position: absolute; top: 16px; right: 16px;
+      background: none; border: none; cursor: pointer;
+      width: 36px; height: 36px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gray); font-size: 1.3rem;
+      transition: background .2s, color .2s;
+    }
+    .exit-close:hover { background: rgba(255,255,255,0.06); color: var(--white); }
+    .exit-icon { font-size: 3rem; margin-bottom: 20px; }
+    .exit-modal h3 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: clamp(1.6rem,4vw,2.2rem);
+      line-height: 1.1; margin-bottom: 14px; color: var(--white);
+    }
+    .exit-modal p {
+      color: var(--gray-light); font-size: 0.95rem;
+      line-height: 1.7; margin-bottom: 28px;
+      max-width: 380px; margin-left: auto; margin-right: auto;
+    }
+    .exit-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--blue-accent); color: var(--white);
+      padding: 16px 36px; border-radius: 10px;
+      font-weight: 700; font-size: 1rem;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: transform .2s, box-shadow .2s, background .2s;
+    }
+    .exit-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px var(--blue-glow);
+      background: var(--blue-accent-hover);
+    }
+    .exit-note { color: var(--gray); font-size: 0.8rem; margin-top: 16px; }
+
     /* ── ANIMATIONS ── */
     @keyframes fadeDown {
       from { opacity: 0; transform: translateY(20px); }
@@ -831,6 +1014,9 @@
       .comparison-table td { padding: 12px 14px; }
       .about-inner { flex-direction: column; text-align: center; }
       .about-photo { width: 150px; min-width: 150px; height: 150px; font-size: 3rem; }
+      .calculator-inner { padding: 32px 24px; }
+      .deals-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; }
+      .exit-overlay { display: none !important; }
     }
     @media (min-width: 769px) {
       .nav-phone-mobile { display: none !important; }
@@ -1018,6 +1204,63 @@
     <p class="fade-in" style="text-align:center;color:var(--gray);margin-top:28px;font-size:0.88rem">
       Service fee is paid upfront before we begin sourcing. <strong style="color:var(--blue-accent)">100% refund</strong> if we can't find your car or the deal falls through.
     </p>
+  </div>
+</section>
+
+<!-- ═══ SAVINGS CALCULATOR ═══ -->
+<section class="calculator" id="calculator">
+  <div class="container" style="text-align:center">
+    <div class="section-label fade-in">Savings Calculator</div>
+    <h2 class="section-title fade-in">See How Much You Could Save</h2>
+    <p class="section-sub fade-in" style="margin:0 auto">Pick a vehicle price range and see the difference between dealership markup and our wholesale pricing.</p>
+
+    <div class="calculator-inner fade-in">
+      <div class="calc-input-group">
+        <label for="calc-range">What's your target vehicle price range?</label>
+        <select id="calc-range">
+          <option value="">Select a price range</option>
+          <option value="2000">Under $3,000</option>
+          <option value="5000">$3,000 – $5,000</option>
+          <option value="7500">$5,000 – $10,000</option>
+          <option value="15000">$10,000 – $20,000</option>
+          <option value="25000">$20,000 – $30,000</option>
+          <option value="35000">$30,000+</option>
+        </select>
+      </div>
+
+      <div class="calc-results" id="calcResults">
+        <div class="calc-bar-group">
+          <div class="calc-bar-label">
+            <span class="label-text">Dealership Price</span>
+            <span class="label-price dealer-price" id="calcDealerPrice">$0</span>
+          </div>
+          <div class="calc-bar">
+            <div class="calc-bar-fill bar-dealer" id="calcDealerBar"></div>
+          </div>
+        </div>
+
+        <div class="calc-bar-group">
+          <div class="calc-bar-label">
+            <span class="label-text">Your Price with Goke</span>
+            <span class="label-price goke-price" id="calcGokePrice">$0</span>
+          </div>
+          <div class="calc-bar">
+            <div class="calc-bar-fill bar-goke" id="calcGokeBar"></div>
+          </div>
+        </div>
+
+        <div class="calc-savings-box">
+          <div class="calc-savings-label">Your Estimated Savings</div>
+          <div class="calc-savings-amount" id="calcSavings">$0</div>
+          <div class="calc-savings-note">Compared to typical dealership pricing</div>
+          <div class="calc-fee-badge" id="calcFeeBadge">$750 service fee included</div>
+        </div>
+
+        <div class="calc-cta">
+          <a href="#contact" class="btn-primary">Get Started — Find Your Car</a>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1220,6 +1463,65 @@
             <div class="testimonial-car">2020 Ford Explorer</div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DEAL EXAMPLES ═══ -->
+<section class="deal-examples">
+  <div class="container" style="text-align:center">
+    <div class="section-label fade-in">Real Savings</div>
+    <h2 class="section-title fade-in">Recent Deals We've Done</h2>
+    <p class="section-sub fade-in" style="margin:0 auto">Here are real examples of what our customers saved compared to dealership pricing.</p>
+
+    <div class="deals-grid">
+      <div class="deal-card fade-in">
+        <div class="deal-car-icon">🚗</div>
+        <div class="deal-car-name">2022 Honda Civic</div>
+        <div class="deal-price-row">
+          <span class="deal-price-label">Dealership Price</span>
+          <span class="deal-price-value dealer">$24,500</span>
+        </div>
+        <div class="deal-price-row">
+          <span class="deal-price-label">Your Price with Goke</span>
+          <span class="deal-price-value goke">$19,200</span>
+        </div>
+        <div class="deal-savings-badge">Saved $5,300</div>
+        <br>
+        <div class="deal-fee-badge">$1,000 service fee</div>
+      </div>
+
+      <div class="deal-card fade-in">
+        <div class="deal-car-icon">🚙</div>
+        <div class="deal-car-name">2021 Toyota Camry</div>
+        <div class="deal-price-row">
+          <span class="deal-price-label">Dealership Price</span>
+          <span class="deal-price-value dealer">$22,800</span>
+        </div>
+        <div class="deal-price-row">
+          <span class="deal-price-label">Your Price with Goke</span>
+          <span class="deal-price-value goke">$18,400</span>
+        </div>
+        <div class="deal-savings-badge">Saved $4,400</div>
+        <br>
+        <div class="deal-fee-badge">$1,000 service fee</div>
+      </div>
+
+      <div class="deal-card fade-in">
+        <div class="deal-car-icon">🚘</div>
+        <div class="deal-car-name">2020 Ford Explorer</div>
+        <div class="deal-price-row">
+          <span class="deal-price-label">Dealership Price</span>
+          <span class="deal-price-value dealer">$28,900</span>
+        </div>
+        <div class="deal-price-row">
+          <span class="deal-price-label">Your Price with Goke</span>
+          <span class="deal-price-value goke">$23,500</span>
+        </div>
+        <div class="deal-savings-badge">Saved $5,400</div>
+        <br>
+        <div class="deal-fee-badge">$1,000 service fee</div>
       </div>
     </div>
   </div>
@@ -1541,6 +1843,18 @@
 <!-- ═══ BACK TO TOP ═══ -->
 <a href="#" class="back-to-top" id="backToTop" aria-label="Back to top">↑</a>
 
+<!-- ═══ EXIT INTENT POPUP ═══ -->
+<div class="exit-overlay" id="exitOverlay">
+  <div class="exit-modal">
+    <button class="exit-close" id="exitClose" aria-label="Close popup">&times;</button>
+    <div class="exit-icon">💰</div>
+    <h3>Wait — Get a Free Price Check Before You Go</h3>
+    <p>Tell us what car you're looking for. We'll check auction prices and show you how much you could save.</p>
+    <a href="#contact" class="exit-cta" id="exitCta">Get My Free Price Check</a>
+    <div class="exit-note">No commitment. No spam. Just savings.</div>
+  </div>
+</div>
+
 <script>
   // Fade-in observer
   const observer = new IntersectionObserver((entries) => {
@@ -1628,6 +1942,78 @@
   }, { threshold: 0.3 });
   const statsBar = document.querySelector('.stats-bar');
   if (statsBar) statsObserver.observe(statsBar);
+
+  // Savings Calculator
+  const calcRange = document.getElementById('calc-range');
+  if (calcRange) {
+    calcRange.addEventListener('change', function() {
+      const wholesale = parseInt(this.value, 10);
+      const results = document.getElementById('calcResults');
+      if (!wholesale) { results.classList.remove('active'); return; }
+
+      var serviceFee = 750;
+      if (wholesale <= 3000) serviceFee = 500;
+      else if (wholesale <= 10000) serviceFee = 750;
+      else serviceFee = 1000;
+
+      var dealerPrice = Math.round(wholesale * 1.20);
+      var gokePrice = wholesale + serviceFee;
+      var savings = dealerPrice - gokePrice;
+
+      results.classList.add('active');
+      document.getElementById('calcDealerPrice').textContent = '$' + dealerPrice.toLocaleString();
+      document.getElementById('calcGokePrice').textContent = '$' + gokePrice.toLocaleString();
+      document.getElementById('calcFeeBadge').textContent = '$' + serviceFee + ' service fee included';
+
+      // Reset bars then animate
+      document.getElementById('calcDealerBar').style.width = '0';
+      document.getElementById('calcGokeBar').style.width = '0';
+      setTimeout(function() {
+        document.getElementById('calcDealerBar').style.width = '100%';
+        document.getElementById('calcGokeBar').style.width = ((gokePrice / dealerPrice) * 100) + '%';
+      }, 50);
+
+      // Animate savings counter
+      var savingsEl = document.getElementById('calcSavings');
+      var duration = 1200;
+      var start = performance.now();
+      function tickSavings(now) {
+        var elapsed = now - start;
+        var progress = Math.min(elapsed / duration, 1);
+        var ease = 1 - Math.pow(1 - progress, 3);
+        savingsEl.textContent = '$' + Math.floor(ease * savings).toLocaleString();
+        if (progress < 1) requestAnimationFrame(tickSavings);
+      }
+      requestAnimationFrame(tickSavings);
+    });
+  }
+
+  // Exit-Intent Popup (desktop only)
+  (function() {
+    var exitShown = sessionStorage.getItem('exitPopupShown');
+    var overlay = document.getElementById('exitOverlay');
+    if (!overlay || exitShown) return;
+    var pageReady = false;
+    setTimeout(function() { pageReady = true; }, 3000);
+
+    function showExitPopup() {
+      if (!pageReady || sessionStorage.getItem('exitPopupShown')) return;
+      if (window.innerWidth <= 768) return;
+      overlay.classList.add('active');
+      sessionStorage.setItem('exitPopupShown', 'true');
+      document.removeEventListener('mouseleave', handleMouseLeave);
+    }
+    function closeExitPopup() { overlay.classList.remove('active'); }
+    function handleMouseLeave(e) { if (e.clientY <= 0) showExitPopup(); }
+
+    document.addEventListener('mouseleave', handleMouseLeave);
+    document.getElementById('exitClose').addEventListener('click', closeExitPopup);
+    document.getElementById('exitCta').addEventListener('click', closeExitPopup);
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) closeExitPopup(); });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && overlay.classList.contains('active')) closeExitPopup();
+    });
+  })();
 </script>
 
 </body>
